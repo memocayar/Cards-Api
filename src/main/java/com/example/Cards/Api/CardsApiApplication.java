@@ -11,15 +11,6 @@ public class CardsApiApplication {
 	public static void main(String[] args) {
 
 		SpringApplication.run(CardsApiApplication.class, args);
-
-		Scanner leer = new Scanner(System.in);
-
-		int n = leer.nextInt();
-
-		do {
-			while
-		}
-
 	}
 
 }

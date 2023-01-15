@@ -6,6 +6,7 @@ import com.example.Cards.Api.dto.UserResponse;
 import com.example.Cards.Api.entity.User;
 import com.example.Cards.Api.mapper.UserMapper;
 import com.example.Cards.Api.repository.UserRepository;
+import com.example.Cards.Api.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,16 +24,24 @@ public class UserServiceImp implements UserService{
 
     @Override
     public UserResponse createUser(UserRequest userRequest){
-        Optional<User> user = userMapper.map(userRequest);
+        //TODO: email validation
+
+        User user = userMapper.map(userRequest);
         userRepository.save(user);
 
         return userMapper.map(user);
     }
 
     @Override
-    public UserResponse getUserById(Long id) {
+    public User getUserById(Long id) throws ResourceNotFoundException {
         Optional<User> user = userRepository.findById(id);
-        return userMapper.map(user);
+
+        if(user.isPresent()) {
+            return user.get();
+        } else {
+            throw new ResourceNotFoundException("User not found");
+        }
+
     }
 
     @Override

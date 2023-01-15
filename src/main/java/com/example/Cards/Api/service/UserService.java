@@ -3,11 +3,12 @@ package com.example.Cards.Api.service;
 import com.example.Cards.Api.dto.ListUserResponse;
 import com.example.Cards.Api.dto.UserRequest;
 import com.example.Cards.Api.dto.UserResponse;
+import com.example.Cards.Api.entity.User;
 
 public interface UserService {
     UserResponse createUser(UserRequest userRequest);
 
-    UserResponse getUserById(Long id);
+    User getUserById(Long id);
 
     ListUserResponse getAllUsers();
 

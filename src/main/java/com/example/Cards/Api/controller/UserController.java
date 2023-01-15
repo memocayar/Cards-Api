@@ -3,6 +3,7 @@ package com.example.Cards.Api.controller;
 import com.example.Cards.Api.dto.ListUserResponse;
 import com.example.Cards.Api.dto.UserRequest;
 import com.example.Cards.Api.dto.UserResponse;
+import com.example.Cards.Api.entity.User;
 import com.example.Cards.Api.service.UserServiceImp;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UserResponse> getById(@PathVariable Long id) {
+    public ResponseEntity<User> getById(@PathVariable Long id) {
         return ResponseEntity.ok().body(userServiceImp.getUserById(id));
     }
 }
