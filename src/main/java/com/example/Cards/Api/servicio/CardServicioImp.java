@@ -5,8 +5,10 @@ import com.example.Cards.Api.entidades.Card;
 import com.example.Cards.Api.mapper.CardMapper;
 import com.example.Cards.Api.repositorio.CardRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public class CardServiceImp implements CardService {
+@Service
+public class CardServicioImp implements CardServicio {
 
     @Autowired
     private CardRepositorio cardRepositorio;
