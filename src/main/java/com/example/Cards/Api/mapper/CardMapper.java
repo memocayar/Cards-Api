@@ -4,6 +4,9 @@ import com.example.Cards.Api.dto.CardDTO;
 import com.example.Cards.Api.entidades.Card;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class CardMapper {
 
@@ -22,5 +25,15 @@ public class CardMapper {
         dto.setDescripcion(card.getDescripcion());
 
         return dto;
+    }
+
+    public List<CardDTO> listCard2ListDTO(List<Card> cards){
+        List<CardDTO> listDTO = new ArrayList<>();
+
+        for(Card card : cards){
+            listDTO.add(entity2DTO(card));
+        }
+
+        return listDTO;
     }
 }
