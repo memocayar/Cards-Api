@@ -2,7 +2,6 @@ package com.example.Cards.Api.servicio;
 
 import com.example.Cards.Api.dto.CardDTO;
 import com.example.Cards.Api.entidades.Card;
-import com.example.Cards.Api.entidades.CardRepository;
 import com.example.Cards.Api.excepciones.ResourceNotFoundException;
 import com.example.Cards.Api.mapper.CardMapper;
 import com.example.Cards.Api.repositorio.CardRepositorio;
